@@ -1,0 +1,9 @@
+.coords{
+    font-family: 'Space Mono';
+    margin-bottom: 5px;
+}
+
+#coords{
+    margin: 5px;
+    padding-bottom: 5px;
+}

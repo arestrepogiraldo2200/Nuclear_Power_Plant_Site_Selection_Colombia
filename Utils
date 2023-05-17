@@ -1,0 +1,6 @@
+HERE inc. map functionality of interest:
+
+Custom map objects - the API supports the creation of both interactive and non-interactive map objects: markers with SVG, HTML or bitmap images geo shapes, including polygons, polylines, circles and rectangles
+
+Mouse and touch interaction - The API (via an events extension) supports mouse and touch interaction with the map, including pan, zoom and pinch-to-zoom on a broad range of devices.
+
