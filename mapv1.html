@@ -14,138 +14,162 @@
     <script src="../private_data.js"></script>
     <link href = "style.css" rel="stylesheet"></style>
     <link href='https://fonts.googleapis.com/css?family=Space Mono' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Libre Caslon Text' rel='stylesheet'>
 </head>
 
 <body>
-  <div style = "width: 98vw; height: 94vh; padding: 0px; margin: 0px; border: 2px solid black;" id="mapContainer">
-    <script type="text/javascript" charset="utf-8">
 
-      // Initialize the platform object
-      var platform = new H.service.Platform({
-        apikey: MY_KEY
-      });
+  <div class="title_container">
+    <h1 class="title">
+      Zonas de exclusión para una central nuclear de potencia en Colombia
+    </h1>
+  </div>
 
-      // Obtain the default map types from the platform object
-      var maptypes = platform.createDefaultLayers();
+  <div class = "map">
+    <div style = "width: 90vw; height: 93.5vh; padding: 0px; margin: 0px; border: 2px solid black;" id="mapContainer">
+      <script type="text/javascript" charset="utf-8">
 
-      // Instantiate (and display) the map
-      var map = new H.Map( document.getElementById('mapContainer'), maptypes.vector.normal.map,
-      {
-          zoom: 5.85,                                   // Initial zoom
-          center: { lat:  4.5709, lng: -74.2973 },     // Coordinates of Colombia centroid
-          pixelRatio: window.devicePixelRatio || 1
+        // Initialize the platform object
+        var platform = new H.service.Platform({
+          apikey: MY_KEY
+        });
 
-      });
+        // Obtain the default map types from the platform object
+        var maptypes = platform.createDefaultLayers();
 
-      // Resize the map according to viewport size
-      window.addEventListener('resize', () => map.getViewPort().resize());
-
-      // Changes color of background
-      window.addEventListener("load", () => { document.body.style.background = '#e1e7f1';});
-
-      // User interactions in map
-      var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
-      // Objects for user interphase controllers
-      var ui = H.ui.UI.createDefault(map, maptypes);
-
-      // Controls
-      ui.getControl('mapsettings').setDisabled(true);
-      var zoom = ui.getControl('zoom');
-      var scalebar = ui.getControl('scalebar');
-
-      // Function to display coordinates by mouse click
-      function setUpClickListener(map) {
-
-        map.addEventListener('tap', function (evt) {
-
-          var coord = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
-          var output = document.getElementById('coords');
-          coords.innerHTML = 'Coordenadas del último click: lat: ' + coord.lat.toFixed(6)  + ',  lng: ' + coord.lng.toFixed(6);
+        // Instantiate (and display) the map
+        var map = new H.Map( document.getElementById('mapContainer'), maptypes.vector.normal.map,
+        {
+            zoom: 5.85,                                   // Initial zoom
+            center: { lat:  4.5709, lng: -74.2973 },     // Coordinates of Colombia centroid
+            pixelRatio: window.devicePixelRatio || 1
 
         });
-      }
 
-      setUpClickListener(map);
+        // Resize the map according to viewport size
+        window.addEventListener('resize', () => map.getViewPort().resize());
 
-      // Function to restrict map view
-      function restrictMap(map){
+        // Changes color of background
+        window.addEventListener("load", () => { document.body.style.background = '#e1e7f1';});
 
-        // Get map current zoom
-        map.getViewModel().addEventListener('sync', function(e) {
+        // User interactions in map
+        var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
-        // Restrict zoom to no less than 5.85
-        let zoom = map.getZoom();
-        if (zoom < 5.85){
-          map.setZoom(5.85);
+        // Objects for user interphase controllers
+        var ui = H.ui.UI.createDefault(map, maptypes);
+
+        // Controls
+        ui.getControl('mapsettings').setDisabled(true);
+        var zoom = ui.getControl('zoom');
+        var scalebar = ui.getControl('scalebar');
+
+        // Function to display coordinates by mouse click
+        function setUpClickListener(map) {
+
+          map.addEventListener('tap', function (evt) {
+
+            var coord = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
+            var output = document.getElementById('coords');
+            coords.innerHTML = 'Coordenadas del último click: lat: ' + coord.lat.toFixed(6)  + ',  lng: ' + coord.lng.toFixed(6);
+
+          });
         }
 
-        // Get map current boundaries
-        var mapViewBounds = map.getViewModel().getLookAtData().bounds.getBoundingBox();
-        var topMap = mapViewBounds.getTop();
-        var bottomMap = mapViewBounds.getBottom();
-        var leftMap = mapViewBounds.getLeft();
-        var rightMap = mapViewBounds.getRight();
+        setUpClickListener(map);
 
-        // Restrict map view to focus on Colombia only
-        if (topMap > 13.9 || bottomMap < -4.9 || leftMap < -92.5 || rightMap > -56.1){
-            map.setCenter({ lat:  4.5709, lng: -74.2973 });
+        // Function to restrict map view
+        function restrictMap(map){
+
+          // Get map current zoom
+          map.getViewModel().addEventListener('sync', function(e) {
+
+          // Restrict zoom to no less than 5.85
+          let zoom = map.getZoom();
+          if (zoom < 5.85){
+            map.setZoom(5.85);
+          }
+
+          // Get map current boundaries
+          var mapViewBounds = map.getViewModel().getLookAtData().bounds.getBoundingBox();
+          var topMap = mapViewBounds.getTop();
+          var bottomMap = mapViewBounds.getBottom();
+          var leftMap = mapViewBounds.getLeft();
+          var rightMap = mapViewBounds.getRight();
+
+          // Restrict map view to focus on Colombia only
+          if (topMap > 13.9 || bottomMap < -4.9 || leftMap < -92.5 || rightMap > -56.1){
+              map.setCenter({ lat:  4.5709, lng: -74.2973 });
+          }
+        });
         }
-      });
-      }
-      
-      restrictMap(map);
+        
+        restrictMap(map);
 
 
-      // for (let i = 0; i<3; i++){
-      // // Mark a circle
-      // var circle = new H.map.Circle({ lat: 4.624335 +i, lng: -74.063644+i}, 80000, {
-      //     style: {
-      //         fillColor: 'rgba(0, 128, 0, 0.7)',
-      //         strokeColor: 'rgba(55, 85, 170, 0.6)',
-      //         lineWidth: 2,
-      //         opacity: 0.1
-      //     }
-      //     });
+        // for (let i = 0; i<3; i++){
+        // // Mark a circle
+        // var circle = new H.map.Circle({ lat: 4.624335 +i, lng: -74.063644+i}, 80000, {
+        //     style: {
+        //         fillColor: 'rgba(0, 128, 0, 0.7)',
+        //         strokeColor: 'rgba(55, 85, 170, 0.6)',
+        //         lineWidth: 2,
+        //         opacity: 0.1
+        //     }
+        //     });
 
-      // map.addObject(circle);}
+        // map.addObject(circle);}
 
-      // // Mark a polygon
-      // function addPolygonToMap(map) {
-      //   var lineString = new H.geo.LineString(
-      //     [
-      //     6.230833, -75.590553, 0,
-      //     6.144837, -75.375085, 0,
-      //     7.119349, -73.122742, 0,
-      //     10.96854, -74.781320, 0,
-      //     10.39104, -75.479426, 0,
-      //     ],
-      //   'values lat lng alt');
+        // // Mark a polygon
+        // function addPolygonToMap(map) {
+        //   var lineString = new H.geo.LineString(
+        //     [
+        //     6.230833, -75.590553, 0,
+        //     6.144837, -75.375085, 0,
+        //     7.119349, -73.122742, 0,
+        //     10.96854, -74.781320, 0,
+        //     10.39104, -75.479426, 0,
+        //     ],
+        //   'values lat lng alt');
 
-      //   map.addObject(
-      //       new H.map.Polygon(lineString, {
-      //       style: {
-      //         fillColor: 'rgba(255, 99, 71, 0.7)',
-      //         strokeColor: 'rgba(55, 85, 170, 0.6)',
-      //         lineWidth: 2,
-      //         opacity: 0.1
-      //       }
-      //     })
-      //   );
-      // }
+        //   map.addObject(
+        //       new H.map.Polygon(lineString, {
+        //       style: {
+        //         fillColor: 'rgba(255, 99, 71, 0.7)',
+        //         strokeColor: 'rgba(55, 85, 170, 0.6)',
+        //         lineWidth: 2,
+        //         opacity: 0.1
+        //       }
+        //     })
+        //   );
+        // }
 
-      // addPolygonToMap(map);
+        // addPolygonToMap(map);
 
-    </script>
-    <script src="pupulation.js"></script>
-
-    <div class = "coords" style="font-family: 'Space Mono'; padding-bottom: 10px;">
-      <p id = "coords">Coordenadas del último click: </p>
+      </script>
+      <script src="pupulation.js"></script>
     </div>
-
   </div>
-</body>
 
+
+  <div class = "coords" style="font-family: 'Space Mono'; padding-bottom: 10px;">
+    <p id = "coords">Coordenadas del último click: </p>
+  </div>
+
+  <div class = "exclusion" style="font-family: 'Space Mono'; padding-bottom: 10px;">
+    <div class = "excl_container"><p id = "excl" style = "font-weight: 400;">Criterios de exclusión: </p></div>
+    <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Tamaño de población (?? nombre tentativo)</p></div>
+    <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Criterio de exclusión 1</p></div>
+    <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Criterio de exclusión 2</p></div>
+    <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Criterio de exclusión 3</p></div>
+    <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Criterio de exclusión 4 etc.</p></div>
+  </div>
+
+  <div class = "info" style="font-family: 'Space Mono'; padding-bottom: 10px;">
+    <p id = "inf">Alejandro Restrepo Giraldo, Nataly Gómez Garzón. 2023</p>
+    <p id = "inf">Artículo ------ poner href cuando exista </p>
+  </div>
+
+</body>
 <footer>
 </footer>
 </html>

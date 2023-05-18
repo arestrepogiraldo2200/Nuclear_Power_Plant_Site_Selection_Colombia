@@ -2850,7 +2850,7 @@ for (let i = 0; i < population_data.length; i++){
   let circle = new H.map.Circle({ lat: population_data[i].latitude, lng: population_data[i].longitude}, radius, {
       style: {
           fillColor: 'rgba(0, 128, 0, 0.5)',
-          strokeColor: 'rgba(55, 85, 170, 0.5)',
+          strokeColor: 'rgba(0, 128, 0, 0.5)',
           lineWidth: 2,
           opacity: 0.1
       }
