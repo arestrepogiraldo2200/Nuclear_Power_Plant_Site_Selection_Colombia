@@ -59,7 +59,7 @@
         var ui = H.ui.UI.createDefault(map, maptypes);
 
         // Controls
-        ui.getControl('mapsettings').setDisabled(true);
+        ui.removeControl("mapsettings");
         var zoom = ui.getControl('zoom');
         var scalebar = ui.getControl('scalebar');
 
@@ -147,6 +147,7 @@
 
       </script>
       <script src="pupulation.js"></script>
+      <script src="flights.js"></script>
     </div>
   </div>
 
@@ -157,8 +158,8 @@
 
   <div class = "exclusion" style="font-family: 'Space Mono'; padding-bottom: 10px;">
     <div class = "excl_container"><p id = "excl" style = "font-weight: 400;">Criterios de exclusión: </p></div>
-    <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Tamaño de población (?? nombre tentativo)</p></div>
-    <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Criterio de exclusión 1</p></div>
+    <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Tamaño de población</p></div>
+    <div class = "excl_container"><div style="background-color: #800000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Rutas aéreas</p></div>
     <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Criterio de exclusión 2</p></div>
     <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Criterio de exclusión 3</p></div>
     <div class = "excl_container"><div style="background-color: #008000; width: 9px; height:9px; margin-top:6px; margin-right:5px"></div><p id = "excl">Criterio de exclusión 4 etc.</p></div>
@@ -167,6 +168,7 @@
   <div class = "info" style="font-family: 'Space Mono'; padding-bottom: 10px;">
     <p id = "inf">Alejandro Restrepo Giraldo, Nataly Gómez Garzón. 2023</p>
     <p id = "inf">Artículo ------ poner href cuando exista </p>
+    <p id = "inf">Versión ------ </p>
   </div>
 
 </body>
