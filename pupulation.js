@@ -2851,7 +2851,7 @@ for (let i = 0; i < population_data.length; i++){
       style: {
           fillColor: 'rgba(0, 128, 0, 0.3)',
           strokeColor: 'rgba(0, 128, 0, 0.2)',
-          lineWidth: 2,
+          lineWidth: 1,
           opacity: 0.1
       }
   });
