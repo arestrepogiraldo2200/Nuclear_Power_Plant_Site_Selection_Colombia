@@ -2835,27 +2835,52 @@ let population_data = [
     }
   ]
 
-for (let i = 0; i < population_data.length; i++){
+//import {save, load} from './keep_checkboxes';
 
-  if (population_data[i].pop2023 <= 25000 ){
-      radius = 6500;
-  } else if (population_data[i].pop2023 <= 100000 ){
-      radius = 16000;
-  } else if (population_data[i].pop2023 <= 500000 ){
-      radius = 32200;
+// Obtains the checkbox object related to the population exclusion
+let population_exclusion = document.getElementById('population_exclusion');
+
+// Draws the exclusion zones when page is loaded
+window.addEventListener('load', (event) => {
+  draw_exclusion_population();
+});
+
+// Detects changes in the checkbox related to the population exclusion and "erase" or draws it
+population_exclusion.addEventListener('change', (event) => {
+
+  if (population_exclusion.checked){
+    draw_exclusion_population();
   } else {
-      radius = 48300;
+    //map.getViewModel().addEventListener('sync', function(e) {}); 
+    window.location.reload();
   }
+})
 
-  let circle = new H.map.Circle({ lat: population_data[i].latitude, lng: population_data[i].longitude}, radius, {
-      style: {
-          fillColor: 'rgba(0, 128, 0, 0.3)',
-          strokeColor: 'rgba(0, 128, 0, 0.2)',
-          lineWidth: 1,
-          opacity: 0.1
-      }
-  });
+// Takes the data above and draws the exclusion circle zones
+function draw_exclusion_population(){
 
-  map.addObject(circle);
+  for (let i = 0; i < population_data.length; i++){
 
+    if (population_data[i].pop2023 <= 25000 ){
+        radius = 6500;
+    } else if (population_data[i].pop2023 <= 100000 ){
+        radius = 16000;
+    } else if (population_data[i].pop2023 <= 500000 ){
+        radius = 32200;
+    } else {
+        radius = 48300;
+    }
+  
+    let circle = new H.map.Circle({ lat: population_data[i].latitude, lng: population_data[i].longitude}, radius, {
+        style: {
+            fillColor: 'rgba(0, 128, 0, 0.3)',
+            strokeColor: 'rgba(0, 128, 0, 0.3)',
+            lineWidth: 1,
+            opacity: 0.1
+        }
+    });
+
+    map.addObject(circle);
+  }
 }
+
