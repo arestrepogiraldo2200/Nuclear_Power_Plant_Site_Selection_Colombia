@@ -2835,26 +2835,27 @@ let population_data = [
     }
   ]
 
-//import {save, load} from './keep_checkboxes';
+// THIS BLOCK SHOULD APPEAR ON EACH EXCLUSION ZONE CALCULATION .js
+//--------------------------------------------------------------------------------------
 
 // Obtains the checkbox object related to the population exclusion
 let population_exclusion = document.getElementById('population_exclusion');
 
-// Draws the exclusion zones when page is loaded
-window.addEventListener('load', (event) => {
+// If the box is checked at the program start, then draw
+if (!population_exclusion.checked){
   draw_exclusion_population();
-});
+}
 
-// Detects changes in the checkbox related to the population exclusion and "erase" or draws it
+// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
 population_exclusion.addEventListener('change', (event) => {
 
   if (population_exclusion.checked){
-    draw_exclusion_population();
-  } else {
-    //map.getViewModel().addEventListener('sync', function(e) {}); 
     window.location.reload();
+  } else {
+    draw_exclusion_population();
   }
 })
+//--------------------------------------------------------------------------------------
 
 // Takes the data above and draws the exclusion circle zones
 function draw_exclusion_population(){

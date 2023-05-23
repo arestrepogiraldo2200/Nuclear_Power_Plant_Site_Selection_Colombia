@@ -157,24 +157,43 @@
   </div>
 
   <div class = "exclusion" style="font-family: 'Space Mono'; padding-bottom: 10px;">
-    <div class = "excl_container"><p id = "excl" style = "font-weight: 400;">Criterios de exclusión: </p></div>
+    <div class = "excl_container"><p id = "excl" style = "font-weight: 400;">Criterios de exclusión (click para graficar o borrar del mapa): </p></div>
+    
+    <!-- Inputs and spans to account for the user requested exclusion zones. Uses sessionStorage object to save the state of each checkbox -->
     <div class = "excl_container">
-      <input type="checkbox" id = "population_exclusion" style = "accent-color: #008000; width: 15px; height:15px; margin-top:6px; margin-right:5px;" checked>
+      <input type="checkbox" id = "population_exclusion" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_population_exclusion"></span>
       <p id = "excl">Tamaño de población</p>
     </div>
+    
     <div class = "excl_container">
-      <input type="checkbox" id = "flights_exclusion" style = "accent-color:#800000; width: 15px; height:15px; margin-top:6px; margin-right:5px;" checked>
-      <p id = "excl">Rutas aéreas y aeropuertos</p>
+      <input type="checkbox" id = "flights_exclusion" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_flights_exclusion"></span>
+      <p id = "excl">Rutas aéreas nacionales y aeropuertos</p>
     </div>
+    
     <div class = "excl_container">
-      <input type="checkbox" id = "excltest" checked>
-      <p id = "excl">Criterio de exclusión</p>
+      <input type="checkbox" id = "overland_flights_exclusion" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="overland_flights_exclusion"></span>
+      <p id = "excl">Otras rutas aéreas sobre el territorio Colombiano</p>
     </div>
+    
     <div class = "excl_container">
-      <input type="checkbox" id = "excltest" checked>
+      <input type="checkbox" id = "excltest" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="excltest"></span>
       <p id = "excl">Criterio de exclusión</p>
     </div>
   </div>
+
+  <script type="text/javascript">
+
+    console.log(sessionStorage);
+
+    for (var i=0; i<sessionStorage.length; i++){
+        var key = sessionStorage.key(i);
+        document.getElementById(key).checked=1;
+    }
+  </script>
 
   <div class = "info" style="font-family: 'Space Mono'; padding-bottom: 10px;">
     <p id = "inf">Alejandro Restrepo Giraldo, Nataly Gómez Garzón. 2023</p>

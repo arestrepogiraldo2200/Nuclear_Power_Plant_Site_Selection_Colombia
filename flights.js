@@ -5648,41 +5648,67 @@ let airports_coords = [
       }
 ]
 
-function addPolylineToMap(map, lati, lngi, latf, lngf) {
-    var lineString = new H.geo.LineString();
-  
-    lineString.pushPoint({lat:lati, lng:lngi});
-    lineString.pushPoint({lat:latf, lng:lngf});
-  
-    map.addObject(new H.map.Polyline(
-      lineString, { style: { lineWidth: 1, strokeColor: 'rgba(128, 0, 0, 0.1)'}}
-    ));
+// THIS BLOCK SHOULD APPEAR ON EACH EXCLUSION ZONE CALCULATION .js
+//--------------------------------------------------------------------------------------
+
+// Obtains the checkbox object related to the population exclusion
+let flights_exclusion = document.getElementById('flights_exclusion');
+
+// If the box is checked at the program start, then draw
+if (!flights_exclusion.checked){
+      draw_exclusion_flights();
 }
 
-for (let i = 0; i < flights_coords.length; i++){
-    addPolylineToMap(map, flights_coords[i].lati, flights_coords[i].lngi, flights_coords[i].latf, flights_coords[i].lngf);
-}
+// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
+flights_exclusion.addEventListener('change', (event) => {
 
+  if (flights_exclusion.checked){
+    window.location.reload();
+  } else {
+      draw_exclusion_flights();
+  }
+})
+//--------------------------------------------------------------------------------------
 
-for (let i = 0; i < airports_coords.length; i++){
+// Takes the data above and draws the exclusion circle zones and aerial routes
+function draw_exclusion_flights(){
 
-      let radius = 0;
-
-      if (airports_coords[i].type == 'small_airport'){
-            radius = 16000;    // change to 8000 in case of further consideration
-      } else {
-            radius = 16000;   
+      function addPolylineToMap(map, lati, lngi, latf, lngf) {
+      var lineString = new H.geo.LineString();
+      
+      lineString.pushPoint({lat:lati, lng:lngi});
+      lineString.pushPoint({lat:latf, lng:lngf});
+      
+      map.addObject(new H.map.Polyline(
+            lineString, { style: { lineWidth: 1, strokeColor: 'rgba(128, 0, 0, 0.1)'}}
+      ));
       }
 
-      let circle = new H.map.Circle({ lat: airports_coords[i].lat, lng: airports_coords[i].lng}, radius, {
-            style: {
-                  fillColor: 'rgba(128, 0, 0, 0.2)',
-                  strokeColor: 'rgba(128, 0, 0, 0.2)',
-                  lineWidth: 1,
-                  opacity: 0.1
+      for (let i = 0; i < flights_coords.length; i++){
+      addPolylineToMap(map, flights_coords[i].lati, flights_coords[i].lngi, flights_coords[i].latf, flights_coords[i].lngf);
+      }
+
+
+      for (let i = 0; i < airports_coords.length; i++){
+
+            let radius = 0;
+
+            if (airports_coords[i].type == 'small_airport'){
+                  radius = 16000;    // change to 8000 in case of further consideration
+            } else {
+                  radius = 16000;   
             }
-});
 
-map.addObject(circle);
+            let circle = new H.map.Circle({ lat: airports_coords[i].lat, lng: airports_coords[i].lng}, radius, {
+                  style: {
+                        fillColor: 'rgba(128, 0, 0, 0.2)',
+                        strokeColor: 'rgba(128, 0, 0, 0.2)',
+                        lineWidth: 1,
+                        opacity: 0.1
+                  }
+      });
 
+      map.addObject(circle);
+
+      }
 }

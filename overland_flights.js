@@ -11672,18 +11672,43 @@ let flights_coords_sa = [
       }
 ]
 
-function addPolylineToMap(map, lati, lngi, latf, lngf) {
-      var lineString = new H.geo.LineString();
-    
-      lineString.pushPoint({lat:lati, lng:lngi});
-      lineString.pushPoint({lat:latf, lng:lngf});
-    
-      map.addObject(new H.map.Polyline(
-        lineString, { style: { lineWidth: 1, strokeColor: 'rgba(128, 0, 0, 0.1)'}}
-      ));
-  }
-  
-for (let i = 0; i < flights_coords_sa.length; i++){
-      addPolylineToMap(map, flights_coords_sa[i].lati, flights_coords_sa[i].lngi, flights_coords_sa[i].latf, flights_coords_sa[i].lngf);
+// THIS BLOCK SHOULD APPEAR ON EACH EXCLUSION ZONE CALCULATION .js
+//--------------------------------------------------------------------------------------
+
+// Obtains the checkbox object related to the population exclusion
+let overland_flights_exclusion = document.getElementById('overland_flights_exclusion');
+
+// If the box is checked at the program start, then draw
+if (!overland_flights_exclusion.checked){
+      draw_exclusion_overland_flights();
 }
-  
+
+// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
+overland_flights_exclusion.addEventListener('change', (event) => {
+
+  if (overland_flights_exclusion.checked){
+    window.location.reload();
+  } else {
+      draw_exclusion_overland_flights();
+  }
+})
+//--------------------------------------------------------------------------------------
+
+// Takes the data above and draws the exclusion circle zones and aerial routes
+function draw_exclusion_overland_flights(){
+
+      function addPolylineToMap(map, lati, lngi, latf, lngf) {
+            var lineString = new H.geo.LineString();
+      
+            lineString.pushPoint({lat:lati, lng:lngi});
+            lineString.pushPoint({lat:latf, lng:lngf});
+      
+            map.addObject(new H.map.Polyline(
+            lineString, { style: { lineWidth: 1, strokeColor: 'rgba(128, 0, 0, 0.1)'}}
+            ));
+      }
+      
+      for (let i = 0; i < flights_coords_sa.length; i++){
+            addPolylineToMap(map, flights_coords_sa[i].lati, flights_coords_sa[i].lngi, flights_coords_sa[i].latf, flights_coords_sa[i].lngf);
+      }
+}

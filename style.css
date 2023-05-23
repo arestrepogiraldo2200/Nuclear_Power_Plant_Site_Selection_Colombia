@@ -49,7 +49,6 @@
     margin:0
 }
 
-
 .info{
     display: flex;
     align-items: left;
@@ -72,5 +71,40 @@
     justify-content: left;
 }
 
+.checkmark {
+    width: 14px; 
+    height:14px; 
+    margin-top:6px; 
+    margin-right:5px;
+    border-radius: 30%;
+}
 
+#checkmark_population_exclusion{
+    background-color: #008000;
+    border: black 1px solid;
+}
 
+#checkmark_flights_exclusion, #overland_flights_exclusion {
+    background-color: #800000;
+    border: black 1px solid;
+}
+
+#population_exclusion:checked ~ .checkmark, #flights_exclusion:checked ~ .checkmark, #overland_flights_exclusion:checked ~ .checkmark{
+    background-color:white;
+    border: black 1px solid;
+}
+
+#excltest {
+    background-color: blue;
+    border: black 1px solid;
+}
+
+input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 15px; 
+    height:15px; 
+    margin-top:6px; 
+    margin-right:5px;
+}
