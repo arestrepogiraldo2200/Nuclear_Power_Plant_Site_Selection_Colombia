@@ -5684,20 +5684,8 @@ all_same_color.addEventListener('change', (event) => {
 // Takes the data above and draws the exclusion circle zones and aerial routes
 function draw_exclusion_flights(colors1, colors2){
 
-      function addPolylineToMap(map, lati, lngi, latf, lngf) {
-      
-            var lineString = new H.geo.LineString();
-            
-            lineString.pushPoint({lat:lati, lng:lngi});
-            lineString.pushPoint({lat:latf, lng:lngf});
-            
-            map.addObject(new H.map.Polyline(
-                  lineString, { style: { lineWidth: 1, strokeColor: colors1}}
-            ));
-      }
-
       for (let i = 0; i < flights_coords.length; i++){
-      addPolylineToMap(map, flights_coords[i].lati, flights_coords[i].lngi, flights_coords[i].latf, flights_coords[i].lngf);
+            addPolylineToMap(map, flights_coords[i].lati, flights_coords[i].lngi, flights_coords[i].latf, flights_coords[i].lngf, colors1);
       }
 
 
@@ -5723,4 +5711,17 @@ function draw_exclusion_flights(colors1, colors2){
       map.addObject(circle);
 
       }
+}
+
+// Function to draw routes
+function addPolylineToMap(map, lati, lngi, latf, lngf, colors1) {
+      
+      var lineString = new H.geo.LineString();
+      
+      lineString.pushPoint({lat:lati, lng:lngi});
+      lineString.pushPoint({lat:latf, lng:lngf});
+      
+      map.addObject(new H.map.Polyline(
+            lineString, { style: { lineWidth: 1, strokeColor: colors1}}
+      ));
 }

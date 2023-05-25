@@ -239,31 +239,31 @@ all_same_color.addEventListener('change', (event) => {
 
 function draw_exclusion_volcanoes(colors){
 
-    function addPolygonToMap(map, lat, lng) {
-
-        var lineString = new H.geo.LineString(
-        [
-            lat+0.05, lng, 0,
-            lat-0.05, lng+0.05, 0,
-            lat-0.05, lng-0.05, 0,
-        ],
-        'values lat lng alt');
-    
-        map.addObject(
-            new H.map.Polygon(lineString, {
-            style: {
-            fillColor: colors,
-            strokeColor: colors,
-            lineWidth: 1,
-            opacity: 1
-            }
-        })
-        );
-    }
-
     for (let i = 0; i < volcanoes.length; i++){
-        addPolygonToMap(map, parseFloat(volcanoes[i].lat), parseFloat(volcanoes[i].lng));
+        addPolygonToMap(map, parseFloat(volcanoes[i].lat), parseFloat(volcanoes[i].lng), colors);
     }
+}
+// Function to draw volcano triangles
+function addPolygonToMap(map, lat, lng, colors) {
+
+    var lineString = new H.geo.LineString(
+    [
+        lat+0.05, lng, 0,
+        lat-0.05, lng+0.05, 0,
+        lat-0.05, lng-0.05, 0,
+    ],
+    'values lat lng alt');
+
+    map.addObject(
+        new H.map.Polygon(lineString, {
+        style: {
+        fillColor: colors,
+        strokeColor: colors,
+        lineWidth: 1,
+        opacity: 1
+        }
+    })
+    );
 }
 
 
