@@ -2843,7 +2843,7 @@ let population_exclusion = document.getElementById('population_exclusion');
 
 // If the box is checked at the program start, then draw
 if (!population_exclusion.checked){
-  draw_exclusion_population();
+  draw_exclusion_population('rgba(0, 128, 0, 0.3)');
 }
 
 // Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
@@ -2852,13 +2852,27 @@ population_exclusion.addEventListener('change', (event) => {
   if (population_exclusion.checked){
     window.location.reload();
   } else {
-    draw_exclusion_population();
+    draw_exclusion_population('rgba(0, 128, 0, 0.3)');
   }
 })
+
+// Draw all exclusion zones by the same color
+let all_same_color = document.getElementById('all_same_color');
+
+// If the box is checked draw all exclusions by the same color
+all_same_color.addEventListener('change', (event) => {
+
+  if (all_same_color.checked){
+    draw_exclusion_population('rgba(255, 0, 0, 0.8)');
+  } else {
+    window.location.reload();
+  }
+})
+
 //--------------------------------------------------------------------------------------
 
 // Takes the data above and draws the exclusion circle zones
-function draw_exclusion_population(){
+function draw_exclusion_population(colors){
 
   for (let i = 0; i < population_data.length; i++){
 
@@ -2874,8 +2888,8 @@ function draw_exclusion_population(){
   
     let circle = new H.map.Circle({ lat: population_data[i].latitude, lng: population_data[i].longitude}, radius, {
         style: {
-            fillColor: 'rgba(0, 128, 0, 0.3)',
-            strokeColor: 'rgba(0, 128, 0, 0.3)',
+            fillColor: colors,
+            strokeColor: colors,
             lineWidth: 1,
             opacity: 0.1
         }

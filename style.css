@@ -84,18 +84,33 @@
     border: black 1px solid;
 }
 
-#checkmark_flights_exclusion, #overland_flights_exclusion {
+#checkmark_flights_exclusion, #checkmark_overland_flights_exclusion {
     background-color: #800000;
     border: black 1px solid;
 }
 
-#population_exclusion:checked ~ .checkmark, #flights_exclusion:checked ~ .checkmark, #overland_flights_exclusion:checked ~ .checkmark{
+#checkmark_volcanoe_exclusion{
+    background-color: #000080;
+    border: black 1px solid;
+}
+
+#checkmark_all_same_color{
+    background-color:white;
+    border: black 1px solid;
+}
+
+#all_same_color:checked ~ .checkmark{
+    background-color: #ff0000;
+    border: black 1px solid;
+}
+
+#population_exclusion:checked ~ .checkmark, #flights_exclusion:checked ~ .checkmark, #overland_flights_exclusion:checked ~ .checkmark, #volcanoe_exclusion:checked ~ .checkmark{
     background-color:white;
     border: black 1px solid;
 }
 
 #excltest {
-    background-color: blue;
+    background-color: #000080;
     border: black 1px solid;
 }
 

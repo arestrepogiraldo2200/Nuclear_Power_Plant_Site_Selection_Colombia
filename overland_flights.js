@@ -11680,7 +11680,7 @@ let overland_flights_exclusion = document.getElementById('overland_flights_exclu
 
 // If the box is checked at the program start, then draw
 if (!overland_flights_exclusion.checked){
-      draw_exclusion_overland_flights();
+      draw_exclusion_overland_flights('rgba(128, 0, 0, 0.1)');
 }
 
 // Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
@@ -11689,13 +11689,24 @@ overland_flights_exclusion.addEventListener('change', (event) => {
   if (overland_flights_exclusion.checked){
     window.location.reload();
   } else {
-      draw_exclusion_overland_flights();
+      draw_exclusion_overland_flights('rgba(128, 0, 0, 0.1)');
   }
 })
+
+// If the box is checked draw all exclusions by the same color
+all_same_color.addEventListener('change', (event) => {
+
+      if (all_same_color.checked){
+         draw_exclusion_overland_flights('rgba(255, 0, 0, 0.8)');
+      } else {
+        window.location.reload();
+      }
+})
+
 //--------------------------------------------------------------------------------------
 
 // Takes the data above and draws the exclusion circle zones and aerial routes
-function draw_exclusion_overland_flights(){
+function draw_exclusion_overland_flights(colors){
 
       function addPolylineToMap(map, lati, lngi, latf, lngf) {
             var lineString = new H.geo.LineString();
@@ -11704,7 +11715,7 @@ function draw_exclusion_overland_flights(){
             lineString.pushPoint({lat:latf, lng:lngf});
       
             map.addObject(new H.map.Polyline(
-            lineString, { style: { lineWidth: 1, strokeColor: 'rgba(128, 0, 0, 0.1)'}}
+            lineString, { style: { lineWidth: 1, strokeColor: colors}}
             ));
       }
       
