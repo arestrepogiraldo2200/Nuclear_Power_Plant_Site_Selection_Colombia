@@ -5673,7 +5673,7 @@ flights_exclusion.addEventListener('change', (event) => {
 all_same_color.addEventListener('change', (event) => {
 
       if (all_same_color.checked){
-         draw_exclusion_flights('rgba(255, 0, 0, 0.8)', 'rgba(255, 0, 0, 0.8)');
+         draw_exclusion_flights('rgba(255, 0, 0, 0.3)', 'rgba(255, 0, 0, 0.8)');
       } else {
         window.location.reload();
       }

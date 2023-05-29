@@ -1,205 +1,307 @@
 [
       {
-            "name": "Azufral",
-            "type": "Stratovolcano",
-            "last": "-930",
-            "lat": "1.08",
-            "lng": "-77.68"
+            "name": "nan",
+            "lat": 1.91651807900007,
+            "lng": -76.2149769709999
       },
       {
-            "name": "Bravo, Cerro",
-            "type": "Stratovolcano",
-            "last": "1720",
-            "lat": "5.091",
-            "lng": "-75.293"
+            "name": "Volcan Santa Leticia",
+            "lat": 2.23228597000008,
+            "lng": -76.1664950749999
       },
       {
-            "name": "Cisne, Nevado el",
-            "type": "Dome of Ruiz, Nevado del",
-            "last": "",
-            "lat": "4.842528",
-            "lng": "-75.345278"
+            "name": "Volc\u00e1n El Pensil",
+            "lat": 2.17954607800004,
+            "lng": -76.0825759259999
       },
       {
-            "name": "Cumbal",
-            "type": "Stratovolcano",
-            "last": "1926",
-            "lat": "0.95",
-            "lng": "-77.87"
+            "name": "Volc\u00e1n El Dorado",
+            "lat": 2.11027993300007,
+            "lng": -76.2177780169999
       },
       {
-            "name": "Dona Juana",
-            "type": "Stratovolcano",
-            "last": "1906",
-            "lat": "1.5",
-            "lng": "-76.936"
+            "name": "Maar de Yerbabuena",
+            "lat": 2.24094858600006,
+            "lng": -76.4776937309999
       },
       {
-            "name": "Galeras",
-            "type": "Complex",
-            "last": "2014",
-            "lat": "1.22",
-            "lng": "-77.37"
+            "name": "Volc\u00e1n Laguna del Buey",
+            "lat": 2.18360095600008,
+            "lng": -76.4297509229999
       },
       {
-            "name": "Huila, Nevado del",
-            "type": "Stratovolcano",
-            "last": "2012",
-            "lat": "2.93",
-            "lng": "-76.03"
+            "name": "nan",
+            "lat": 1.75720929200008,
+            "lng": -75.9193836229999
       },
       {
-            "name": "Machin",
-            "type": "Stratovolcano",
-            "last": "1180",
-            "lat": "4.487",
-            "lng": "-75.389"
-      },
-      {
-            "name": "Pan de Az\u00facar",
-            "type": "Stratovolcano of Purace",
-            "last": "",
-            "lat": "2.874167",
-            "lng": "-75.715"
-      },
-      {
-            "name": "Purace",
-            "type": "Stratovolcano(es)",
-            "last": "2022",
-            "lat": "2.32",
-            "lng": "-76.4"
-      },
-      {
-            "name": "Romeral",
-            "type": "Stratovolcano",
-            "last": "-5390",
-            "lat": "5.203",
-            "lng": "-75.363"
-      },
-      {
-            "name": "Ruiz, Nevado del",
-            "type": "Stratovolcano",
-            "last": "2023",
-            "lat": "4.892",
-            "lng": "-75.324"
-      },
-      {
-            "name": "Santa Isabel",
-            "type": "Shield",
-            "last": "-850",
-            "lat": "4.818",
-            "lng": "-75.365"
-      },
-      {
-            "name": "Sotara",
-            "type": "Stratovolcano",
-            "last": "Unknown",
-            "lat": "2.108",
-            "lng": "-76.592"
-      },
-      {
-            "name": "Tolima, Nevado del",
-            "type": "Stratovolcano",
-            "last": "1943",
-            "lat": "4.658",
-            "lng": "-75.33"
-      },
-      {
-            "name": "Cerro Negro de Mayasquer",
-            "type": "",
-            "last": "",
-            "lat": "0.824056",
-            "lng": "-77.965694"
-      },
-      {
-            "name": "Volc\u00e1n Chiles",
-            "type": "",
-            "last": "",
-            "lat": "0.821111",
-            "lng": "-77.935"
-      },
-      {
-            "name": "Volc\u00e1n El Escondido",
-            "type": "",
-            "last": "",
-            "lat": "5.516668",
-            "lng": "-75.047889"
+            "name": "Volc\u00e1n La Palma",
+            "lat": 2.30263654100008,
+            "lng": -75.9681073129999
       },
       {
             "name": "Volc\u00e1n Las \u00c1nimas",
-            "type": "",
-            "last": "",
-            "lat": "1.565139",
-            "lng": "-76.856944"
+            "lat": 1.48824024900006,
+            "lng": -76.8231806409999
       },
       {
-            "name": "Volc\u00e1n Petacas",
-            "type": "",
-            "last": "",
-            "lat": "0.675083",
-            "lng": "-76.82"
-      },
-      {
-            "name": "Nevado del Quind\u00edo",
-            "type": "",
-            "last": "",
-            "lat": "4.703778",
-            "lng": "-75.383361"
-      },
-      {
-            "name": "Laguna San Diego",
-            "type": "",
-            "last": "",
-            "lat": "5.650222",
-            "lng": "-74.960222"
-      },
-      {
-            "name": "Volc\u00e1n Alto de Mulatos",
-            "type": "",
-            "last": "",
-            "lat": "8.135822",
-            "lng": "-76.55035"
-      },
-      {
-            "name": "Volc\u00e1n Alto Mellizos",
-            "type": "",
-            "last": "",
-            "lat": "5.504194",
-            "lng": "-75.661833"
-      },
-      {
-            "name": "Volc\u00e1n Arboletes",
-            "type": "",
-            "last": "",
-            "lat": "8.850367",
-            "lng": "-76.432275"
+            "name": "Volc\u00e1n Azufral",
+            "lat": 1.08458345400004,
+            "lng": -77.7166825709999
       },
       {
             "name": "Volc\u00e1n Bordoncillo",
-            "type": "",
-            "last": "",
-            "lat": "1.156056",
-            "lng": "-77.098806"
+            "lat": 1.16805207100009,
+            "lng": -77.1170705139999
       },
       {
-            "name": "Volc\u00e1n Morasurco",
-            "type": "",
-            "last": "",
-            "lat": "1.270556",
-            "lng": "-77.240833"
+            "name": "Volc\u00e1n Calambas",
+            "lat": 2.30135948100008,
+            "lng": -76.3839983689999
       },
       {
-            "name": "Volc\u00e1n Patascoy",
-            "type": "",
-            "last": "",
-            "lat": "0.961389",
-            "lng": "-77.071944"
+            "name": "Volc\u00e1n Campanero",
+            "lat": 1.13829658700007,
+            "lng": -77.1123635069999
       },
       {
-            "name": "Paramillo de Santa Rosa",
-            "type": "",
-            "last": "",
-            "lat": "4.787772",
-            "lng": "-75.465247"
+            "name": "Volc\u00e1n Cerro Bravo",
+            "lat": 5.08460627100004,
+            "lng": -75.2916510279999
+      },
+      {
+            "name": "Volc\u00e1n Cerro Crespo",
+            "lat": 0.909755947000065,
+            "lng": -77.8977381329999
+      },
+      {
+            "name": "Volc\u00e1n Cerro Negro",
+            "lat": 0.823206989000084,
+            "lng": -77.9681859309999
+      },
+      {
+            "name": "Volc\u00e1n Chiles",
+            "lat": 0.814431311000078,
+            "lng": -77.9366892179999
+      },
+      {
+            "name": "nan",
+            "lat": 1.90373729200007,
+            "lng": -76.3161785299999
+      },
+      {
+            "name": "nan",
+            "lat": 1.90933497000009,
+            "lng": -76.2869401909999
+      },
+      {
+            "name": "nan",
+            "lat": 1.92256989400005,
+            "lng": -76.2478783699999
+      },
+      {
+            "name": "nan",
+            "lat": 1.90097848200008,
+            "lng": -76.2422198909999
+      },
+      {
+            "name": "Volc\u00e1n Cumbal",
+            "lat": 0.951039760000072,
+            "lng": -77.8962406589999
+      },
+      {
+            "name": "Volc\u00e1n Curiquinga",
+            "lat": 2.30384217300008,
+            "lng": -76.3909462089999
+      },
+      {
+            "name": "Volc\u00e1n Cutunga",
+            "lat": 1.86090808700004,
+            "lng": -76.5867717629999
+      },
+      {
+            "name": "Complejo Volc\u00e1nico de Do\u00f1a Juana",
+            "lat": 1.49765764700004,
+            "lng": -76.9391594149999
+      },
+      {
+            "name": "Volc\u00e1n Galeras",
+            "lat": 1.22214015500009,
+            "lng": -77.3594113269999
+      },
+      {
+            "name": "Volc\u00e1n Guacharacos",
+            "lat": 4.40781341400009,
+            "lng": -75.1907112779999
+      },
+      {
+            "name": "nan",
+            "lat": 0.73540506900008,
+            "lng": -77.5461765179999
+      },
+      {
+            "name": "Volc\u00e1n Mach\u00e1ngara",
+            "lat": 2.27987958600005,
+            "lng": -76.3733013749999
+      },
+      {
+            "name": "Volc\u00e1n Cerro Mach\u00edn",
+            "lat": 4.48664667400004,
+            "lng": -75.38619431
+      },
+      {
+            "name": "Volc\u00e1n Merenberg",
+            "lat": 2.20589007200005,
+            "lng": -76.1268747269999
+      },
+      {
+            "name": "Volc\u00e1n Morazurco",
+            "lat": 1.27184943700007,
+            "lng": -77.2318683619999
+      },
+      {
+            "name": "Volc\u00e1n Mujundinoy",
+            "lat": 1.08829689100008,
+            "lng": -77.0941270019999
+      },
+      {
+            "name": "Volc\u00e1n Nevado de Santa Isabel",
+            "lat": 4.80261452100007,
+            "lng": -75.3714094059999
+      },
+      {
+            "name": "Volc\u00e1n Paramillo del Cisne",
+            "lat": 4.84308192700007,
+            "lng": -75.3455267419999
+      },
+      {
+            "name": "Volc\u00e1n Nevado del Huila",
+            "lat": 2.92383380900009,
+            "lng": -76.0285912559999
+      },
+      {
+            "name": "Volc\u00e1n Paramillo del Quind\u00edo",
+            "lat": 4.70868888500007,
+            "lng": -75.3807375209999
+      },
+      {
+            "name": "Volc\u00e1n Nevado del Ruiz",
+            "lat": 4.88344339400004,
+            "lng": -75.3174617549999
+      },
+      {
+            "name": "Volc\u00e1n Nevado del Tolima",
+            "lat": 4.65857526200006,
+            "lng": -75.3294966289999
+      },
+      {
+            "name": "Volc\u00e1n Paletar\u00e1",
+            "lat": 2.29501237100004,
+            "lng": -76.3880084399999
+      },
+      {
+            "name": "Volc\u00e1n Pan de Az\u00facar",
+            "lat": 2.27127228800009,
+            "lng": -76.3600051499999
+      },
+      {
+            "name": "Volc\u00e1n Petacas",
+            "lat": 1.56540181300005,
+            "lng": -76.8580683139999
+      },
+      {
+            "name": "Volc\u00e1n Piocollo",
+            "lat": 2.30756900400007,
+            "lng": -76.393205598
+      },
+      {
+            "name": "Volc\u00e1n Purac\u00e9",
+            "lat": 2.31325537600009,
+            "lng": -76.3953416119999
+      },
+      {
+            "name": "Volc\u00e1n Quint\u00edn",
+            "lat": 2.29405947400005,
+            "lng": -76.3791276319999
+      },
+      {
+            "name": "Volc\u00e1n Paramillo de Santa Rosa",
+            "lat": 4.79207864900008,
+            "lng": -75.4788118549999
+      },
+      {
+            "name": "Volc\u00e1n Shaka",
+            "lat": 2.28701968300004,
+            "lng": -76.3723874289999
+      },
+      {
+            "name": "nan",
+            "lat": 1.09837548600007,
+            "lng": -77.0672917739999
+      },
+      {
+            "name": "Volc\u00e1n Sotar\u00e1",
+            "lat": 2.10449286000005,
+            "lng": -76.5909366309999
+      },
+      {
+            "name": "nan",
+            "lat": 1.06016834000008,
+            "lng": -77.1277264639999
+      },
+      {
+            "name": "nan",
+            "lat": 4.39867658000009,
+            "lng": -75.1770072319999
+      },
+      {
+            "name": "Volc\u00e1n El Morro",
+            "lat": 2.18953732000006,
+            "lng": -76.0366826239999
+      },
+      {
+            "name": "Volc\u00e1n Sibundoy",
+            "lat": 1.11631252400008,
+            "lng": -77.0129614499999
+      },
+      {
+            "name": "nan",
+            "lat": 1.92114161800009,
+            "lng": -76.2047293409999
+      },
+      {
+            "name": " ",
+            "lat": 1.17433433100007,
+            "lng": -76.1762800909999
+      },
+      {
+            "name": "nan",
+            "lat": 1.05428448300006,
+            "lng": -77.0666649109999
+      },
+      {
+            "name": "nan",
+            "lat": 1.10300141100009,
+            "lng": -77.2522734069999
+      },
+      {
+            "name": "nan",
+            "lat": 1.10898862300007,
+            "lng": -77.3166872739999
+      },
+      {
+            "name": "Volc\u00e1n El Escondido",
+            "lat": 5.51463725400009,
+            "lng": -75.0476120319999
+      },
+      {
+            "name": "Volc\u00e1n San Diego",
+            "lat": 5.64902672100004,
+            "lng": -74.9600514079999
+      },
+      {
+            "name": "Volc\u00e1n Romeral",
+            "lat": 5.20600000000007,
+            "lng": -75.3639999999999
       }
 ]

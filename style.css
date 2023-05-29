@@ -71,6 +71,8 @@
     justify-content: left;
 }
 
+
+/* Checkmarks ----------------------------------------------------------------- */
 .checkmark {
     width: 14px; 
     height:14px; 
@@ -94,17 +96,38 @@
     border: black 1px solid;
 }
 
+#checkmark_high_sismicity{
+    background-color: #c80000;
+    border: black 1px solid;
+}
+
+#checkmark_medium_sismicity{
+    background-color: #ffee00;
+    border: black 1px solid;
+}
+
+#checkmark_low_sismicity{
+    background-color: #3cb300;
+    border: black 1px solid;
+}
+
 #checkmark_all_same_color{
     background-color:white;
     border: black 1px solid;
 }
+
+/* ----------------------------------------------------------------- */
+
+
+/* Check buttons ----------------------------------------------------------------- */
 
 #all_same_color:checked ~ .checkmark{
     background-color: #ff0000;
     border: black 1px solid;
 }
 
-#population_exclusion:checked ~ .checkmark, #flights_exclusion:checked ~ .checkmark, #overland_flights_exclusion:checked ~ .checkmark, #volcanoe_exclusion:checked ~ .checkmark{
+#population_exclusion:checked ~ .checkmark, #flights_exclusion:checked ~ .checkmark, #overland_flights_exclusion:checked ~ .checkmark, #volcanoe_exclusion:checked ~ .checkmark,
+#high_sismicity:checked ~ .checkmark, #medium_sismicity:checked ~ .checkmark, #low_sismicity:checked ~ .checkmark{
     background-color:white;
     border: black 1px solid;
 }
@@ -123,3 +146,5 @@ input{
     margin-top:6px; 
     margin-right:5px;
 }
+
+/* ----------------------------------------------------------------- */

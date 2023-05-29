@@ -105,46 +105,6 @@
         
         restrictMap(map);
 
-
-        // for (let i = 0; i<3; i++){
-        // // Mark a circle
-        // var circle = new H.map.Circle({ lat: 4.624335 +i, lng: -74.063644+i}, 80000, {
-        //     style: {
-        //         fillColor: 'rgba(0, 128, 0, 0.7)',
-        //         strokeColor: 'rgba(55, 85, 170, 0.6)',
-        //         lineWidth: 2,
-        //         opacity: 0.1
-        //     }
-        //     });
-
-        // map.addObject(circle);}
-
-        // // Mark a polygon
-        // function addPolygonToMap(map) {
-        //   var lineString = new H.geo.LineString(
-        //     [
-        //     6.230833, -75.590553, 0,
-        //     6.144837, -75.375085, 0,
-        //     7.119349, -73.122742, 0,
-        //     10.96854, -74.781320, 0,
-        //     10.39104, -75.479426, 0,
-        //     ],
-        //   'values lat lng alt');
-
-        //   map.addObject(
-        //       new H.map.Polygon(lineString, {
-        //       style: {
-        //         fillColor: 'rgba(255, 99, 71, 0.7)',
-        //         strokeColor: 'rgba(55, 85, 170, 0.6)',
-        //         lineWidth: 2,
-        //         opacity: 0.1
-        //       }
-        //     })
-        //   );
-        // }
-
-        // addPolygonToMap(map);
-
       </script>
       
 
@@ -181,9 +141,27 @@
     <div class = "excl_container">
       <input type="checkbox" id = "volcanoe_exclusion" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
       <span class="checkmark" id="checkmark_volcanoe_exclusion"></span>
-      <p id = "excl">Riesgo de piroclásticos</p>
+      <p id = "excl">Volcanes y riesgo por actividad volcánica (?)</p>
     </div>
-    
+  
+    <div class = "excl_container">
+      <input type="checkbox" id = "high_sismicity" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_high_sismicity"></span>
+      <p id = "excl">Alta sismicidad</p>
+    </div>
+
+    <div class = "excl_container">
+      <input type="checkbox" id = "medium_sismicity" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_medium_sismicity"></span>
+      <p id = "excl">Media sismicidad</p>
+    </div>
+
+    <div class = "excl_container">
+      <input type="checkbox" id = "low_sismicity" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_low_sismicity"></span>
+      <p id = "excl">Baja sismicidad</p>
+    </div>
+
     <div class = "excl_container">
       <input type="checkbox" id = "all_same_color">
       <span class="checkmark" id="checkmark_all_same_color"></span>
@@ -213,6 +191,7 @@
     <p id = "inf">Versión ------ </p>
   </div>
 
+  <script src="amenazaSismica.js"></script>
   <script src="pupulation.js"></script>
   <script src="flights.js"></script>
   <script src="overland_flights.js"></script>
