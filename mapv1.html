@@ -175,6 +175,12 @@
     </div>
 
     <div class = "excl_container">
+      <input type="checkbox" id = "natural_reserve" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_natural_reserve"></span>
+      <p id = "excl">Parques nacionales naturales</p>
+    </div>
+
+    <div class = "excl_container">
       <input type="checkbox" id = "all_same_color">
       <span class="checkmark" id="checkmark_all_same_color"></span>
       <p id = "excl">Trazar zonas de exclusión del mismo color</p>
@@ -188,8 +194,9 @@
   </div>
 
   <script type="text/javascript">
-
-    console.log(sessionStorage);
+    
+    // This script sets the vaules of each checkbox as saved in Session
+    //console.log(sessionStorage);}
 
     for (var i=0; i<sessionStorage.length; i++){
         var key = sessionStorage.key(i);
@@ -210,7 +217,7 @@
   <script src="volcanoes.js"></script>
   <script src="fallasGeologicas.js"></script>
   <script src="ResguardosIndigenas.js"></script>
-
+  <script src="ParquesNacionales.js"></script>
 
 </body>
 <footer>
