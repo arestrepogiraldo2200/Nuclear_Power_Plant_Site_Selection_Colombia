@@ -2843,7 +2843,7 @@ let population_exclusion = document.getElementById('population_exclusion');
 
 // If the box is checked at the program start, then draw
 if (!population_exclusion.checked){
-  draw_exclusion_population('rgba(0, 128, 0, 0.3)');
+  draw_exclusion_population('rgba(0, 128, 0, 0.4)');
 }
 
 // Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
@@ -2852,7 +2852,7 @@ population_exclusion.addEventListener('change', (event) => {
   if (population_exclusion.checked){
     window.location.reload();
   } else {
-    draw_exclusion_population('rgba(0, 128, 0, 0.3)');
+    draw_exclusion_population('rgba(0, 128, 0, 0.4)');
   }
 })
 

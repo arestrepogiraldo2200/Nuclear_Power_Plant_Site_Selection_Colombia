@@ -163,6 +163,12 @@
     </div>
 
     <div class = "excl_container">
+      <input type="checkbox" id = "geological_failure" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_geological_failure"></span>
+      <p id = "excl">Fallas geológicas</p>
+    </div>
+
+    <div class = "excl_container">
       <input type="checkbox" id = "all_same_color">
       <span class="checkmark" id="checkmark_all_same_color"></span>
       <p id = "excl">Trazar zonas de exclusión del mismo color</p>
@@ -196,6 +202,8 @@
   <script src="flights.js"></script>
   <script src="overland_flights.js"></script>
   <script src="volcanoes.js"></script>
+  <script src="fallasGeologicas.js"></script>
+
 
 </body>
 <footer>
