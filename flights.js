@@ -5694,7 +5694,7 @@ function draw_exclusion_flights(colors1, colors2){
             let radius = 0;
 
             if (airports_coords[i].type == 'small_airport'){
-                  radius = 16000;    // change to 8000 in case of further consideration
+                  radius = 8000;    // change to 8000 in case of further consideration
             } else {
                   radius = 16000;   
             }

@@ -121,6 +121,11 @@
     border: black 1px solid;
 }
 
+#checkmark_indigenous_zones{
+    background-color: rgb(73, 10, 118);
+    border: black 1px solid;
+}
+
 /* ----------------------------------------------------------------- */
 
 
@@ -133,7 +138,7 @@
 
 #population_exclusion:checked ~ .checkmark, #flights_exclusion:checked ~ .checkmark, #overland_flights_exclusion:checked ~ .checkmark, #volcanoe_exclusion:checked ~ .checkmark,
 #high_sismicity:checked ~ .checkmark, #medium_sismicity:checked ~ .checkmark, #low_sismicity:checked ~ .checkmark,
-#geological_failure:checked ~ .checkmark{
+#geological_failure:checked ~ .checkmark, #indigenous_zones:checked ~ .checkmark{
     background-color:white;
     border: black 1px solid;
 }
