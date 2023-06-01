@@ -195,6 +195,12 @@
     </div>
 
     <div class = "excl_container">
+      <input type="checkbox" id = "wildfires" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_wildfires"></span>
+      <p id = "excl">Riesgo por incendios forestales</p>
+    </div>
+
+    <div class = "excl_container">
       <input type="checkbox" id = "all_same_color">
       <span class="checkmark" id="checkmark_all_same_color"></span>
       <p id = "excl">Trazar zonas de exclusión del mismo color</p>
@@ -221,7 +227,7 @@
   <div class = "info" style="font-family: 'Space Mono'; padding-bottom: 10px;">
     <p id = "inf">Alejandro Restrepo Giraldo, Nataly Gómez Garzón. 2023</p>
     <p id = "inf">Artículo ------ poner href cuando exista </p>
-    <p id = "inf">Versión ------ </p>
+    <p id = "inf">Versión 1.0</p>
   </div>
 
   <script src="amenazaSismica.js"></script>
@@ -233,6 +239,7 @@
   <script src="fallasGeologicas.js"></script>
   <script src="ResguardosIndigenas.js"></script>
   <script src="ParquesNacionales.js"></script>
+  <script src="RiesgoIncendios.js"></script>
 
 </body>
 <footer>
