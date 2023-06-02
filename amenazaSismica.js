@@ -20769,16 +20769,16 @@ let low_sismicity = document.getElementById('low_sismicity');
 
 // If the box is checked at the program start, then draw
 if (!high_sismicity.checked){
-      draw_exclusion_sismicity('rgba(255, 0, 0, 0.2)', Alta);
+      draw_exclusion_sismicity('rgba(255, 0, 0, 0.15)', Alta);
 }
 if (!medium_sismicity.checked){
-      draw_exclusion_sismicity('rgba(255, 255, 0, 0.2)', Intermedia);
-      draw_exclusion_sismicity('rgba(255, 255, 0, 0.2)', Intermedia2);
-      draw_exclusion_sismicity('rgba(255, 255, 0, 0.2)', Intermedia3);
+      draw_exclusion_sismicity('rgba(255, 255, 0, 0.15)', Intermedia);
+      draw_exclusion_sismicity('rgba(255, 255, 0, 0.15)', Intermedia2);
+      draw_exclusion_sismicity('rgba(255, 255, 0, 0.15)', Intermedia3);
 }
 if (!low_sismicity.checked){
-      draw_exclusion_sismicity('rgba(0, 255, 0, 0.2)', Baja);
-      draw_exclusion_sismicity('rgba(0, 255, 0, 0.2)', Baja2);
+      draw_exclusion_sismicity('rgba(0, 255, 0, 0.15)', Baja);
+      draw_exclusion_sismicity('rgba(0, 255, 0, 0.15)', Baja2);
 }
 
 // Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
@@ -20787,7 +20787,7 @@ high_sismicity.addEventListener('change', (event) => {
   if (high_sismicity.checked){
     window.location.reload();
   } else {
-      draw_exclusion_sismicity('rgba(255, 0, 0, 0.2)', Alta);
+      draw_exclusion_sismicity('rgba(255, 0, 0, 0.15)', Alta);
   }
 })
 
@@ -20797,9 +20797,9 @@ medium_sismicity.addEventListener('change', (event) => {
       if (medium_sismicity.checked){
         window.location.reload();
       } else {
-            draw_exclusion_sismicity('rgba(255, 255, 0, 0.2)', Intermedia);
-            draw_exclusion_sismicity('rgba(255, 255, 0, 0.2)', Intermedia2);
-            draw_exclusion_sismicity('rgba(255, 255, 0, 0.2)', Intermedia3);
+            draw_exclusion_sismicity('rgba(255, 255, 0, 0.15)', Intermedia);
+            draw_exclusion_sismicity('rgba(255, 255, 0, 0.15)', Intermedia2);
+            draw_exclusion_sismicity('rgba(255, 255, 0, 0.15)', Intermedia3);
       }
 })
 
@@ -20809,8 +20809,8 @@ low_sismicity.addEventListener('change', (event) => {
       if (low_sismicity.checked){
         window.location.reload();
       } else {
-            draw_exclusion_sismicity('rgba(0, 255, 0, 0.2)', Baja);
-            draw_exclusion_sismicity('rgba(0, 255, 0, 0.2)', Baja2);
+            draw_exclusion_sismicity('rgba(0, 255, 0, 0.15)', Baja);
+            draw_exclusion_sismicity('rgba(0, 255, 0, 0.15)', Baja2);
       }
 })
 

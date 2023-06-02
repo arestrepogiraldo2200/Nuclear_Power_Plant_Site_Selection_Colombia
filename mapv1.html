@@ -190,7 +190,7 @@
     <div class = "excl_container">
       <input type="checkbox" id = "electrical_transmission" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
       <span class="checkmark" id="checkmark_electrical_transmission"></span>
-      <p id = "excl">Líneas licenciadas de electricidad</p>
+      <p id = "excl">Líneas licenciadas de transmisión eléctrica</p>
     </div>
 
     <div class = "excl_container">
@@ -214,7 +214,13 @@
     <div class = "excl_container">
       <input type="checkbox" id = "aves" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
       <span class="checkmark" id="checkmark_aves"></span>
-      <p id = "excl">Áreas importantes para la conservación de las aves</p>
+      <p id = "excl">Áreas importantes para la conservación de las especies de aves</p>
+    </div>
+
+    <div class = "excl_container">
+      <input type="checkbox" id = "paramos" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_paramos"></span>
+      <p id = "excl">Complejos de páramos</p>
     </div>
 
     <div class = "excl_container">
@@ -260,6 +266,7 @@
   <script src="RiesgoInundacion.js"></script>
   <script src="RiesgoTsunamis.js"></script>
   <script src="ConservacionAves.js"></script>
+  <script src="Paramos.js"></script>
 
 </body>
 <footer>
