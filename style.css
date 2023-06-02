@@ -142,11 +142,24 @@
 }
 
 #checkmark_wildfires{
-    background-color: rgb(190, 95, 0);
+    background-color: rgb(150, 75, 0);
     border: black 1px solid;
 }
 
+#checkmark_flooding{
+    background-color: rgb(0, 67, 112);
+    border: black 1px solid;
+}
 
+#checkmark_tsunamis{
+    background-color: rgb(20, 52, 255);
+    border: black 1px solid;
+}
+
+#checkmark_aves{
+    background-color: rgb(255, 0, 115);
+    border: black 1px solid;
+}
 
 /* ----------------------------------------------------------------- */
 
@@ -161,7 +174,8 @@
 #population_exclusion:checked ~ .checkmark, #flights_exclusion:checked ~ .checkmark, #overland_flights_exclusion:checked ~ .checkmark, #volcanoe_exclusion:checked ~ .checkmark,
 #high_sismicity:checked ~ .checkmark, #medium_sismicity:checked ~ .checkmark, #low_sismicity:checked ~ .checkmark,
 #geological_failure:checked ~ .checkmark, #indigenous_zones:checked ~ .checkmark, #natural_reserve:checked ~ .checkmark,
-#humanity_world_heritage:checked ~ .checkmark, #electrical_transmission:checked ~ .checkmark, #wildfires:checked ~ .checkmark{
+#humanity_world_heritage:checked ~ .checkmark, #electrical_transmission:checked ~ .checkmark, #wildfires:checked ~ .checkmark,
+#flooding:checked ~ .checkmark, #tsunamis:checked ~ .checkmark, #aves:checked ~ .checkmark{
 
     background-color:white;
     border: black 1px solid;

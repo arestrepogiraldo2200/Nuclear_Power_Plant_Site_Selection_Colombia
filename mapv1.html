@@ -16,7 +16,6 @@
     <link href='https://fonts.googleapis.com/css?family=Space Mono' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Libre Caslon Text' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="nuclear-power.png">      <!-- Icon taken from flaticon.com -->
-
 </head>
 
 <body>
@@ -27,7 +26,7 @@
     </h1>
   </div>
 
-  <div class = "map">
+  <div class = "map" alter = "Cargando mapa">
     <div style = "width: 90vw; height: 93.5vh; padding: 0px; margin: 0px; border: 2px solid black;" id="mapContainer">
       <script type="text/javascript" charset="utf-8">
 
@@ -201,6 +200,24 @@
     </div>
 
     <div class = "excl_container">
+      <input type="checkbox" id = "flooding" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_flooding"></span>
+      <p id = "excl">Riesgo por inundaciones</p>
+    </div>
+
+    <div class = "excl_container">
+      <input type="checkbox" id = "tsunamis" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_tsunamis"></span>
+      <p id = "excl">Riesgo por Tsunamis</p>
+    </div>
+
+    <div class = "excl_container">
+      <input type="checkbox" id = "aves" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_aves"></span>
+      <p id = "excl">Áreas importantes para la conservación de las aves</p>
+    </div>
+
+    <div class = "excl_container">
       <input type="checkbox" id = "all_same_color">
       <span class="checkmark" id="checkmark_all_same_color"></span>
       <p id = "excl">Trazar zonas de exclusión del mismo color</p>
@@ -240,6 +257,9 @@
   <script src="ResguardosIndigenas.js"></script>
   <script src="ParquesNacionales.js"></script>
   <script src="RiesgoIncendios.js"></script>
+  <script src="RiesgoInundacion.js"></script>
+  <script src="RiesgoTsunamis.js"></script>
+  <script src="ConservacionAves.js"></script>
 
 </body>
 <footer>
