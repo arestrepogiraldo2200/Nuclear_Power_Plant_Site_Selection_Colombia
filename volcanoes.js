@@ -344,6 +344,7 @@ function draw_exclusion_volcanoes(colors){
     for (let i = 0; i < volcanoes.length; i++){
         addPolygonToMap(map, parseFloat(volcanoes[i].lat), parseFloat(volcanoes[i].lng), colors);
     }
+    addOverlayToMapVolcanoes(map)
 }
 // Function to draw volcano triangles
 function addPolygonToMap(map, lat, lng, colors) {
@@ -368,4 +369,29 @@ function addPolygonToMap(map, lat, lng, colors) {
     );
 }
 
+
+function addOverlayToMapVolcanoes(map) {
+      
+      let overlayImage = new Image();
+      let url = 'https://srvags.sgc.gov.co/arcgis/rest/services/Amenaza_Volcanica/Amenaza_Volcanica/MapServer/export?bbox=-82.59019660585712%2C+-1.8136980652597394%2C+-72.67901651118181%2C+8.097482029415563&bboxSR=&layers=show%3A1%2C2%2C3%2C5%2C6%2C7%2C8%2C10%2C11%2C12%2C17%2C18%2C19%2C21%2C22%2C23%2C25%2C26%2C27%2C28%2C30%2C31%2C32%2C33%2C35%2C36%2C38%2C40%2C41%2C42%2C43%2C44%2C46%2C47%2C48%2C50%2C51%2C53%2C54%2C55%2C56&layerDefs=&size=600%2C600&imageSR=102100&format=png&transparent=true&dpi=96&time=&layerTimeOptions=&dynamicLayers=&gdbVersion=&mapScale=&rotation=&f=image';
+      overlayImage.src = url;
+      overlayImage.crossOrigin = 'Anonymous';
+      
+      
+      // create an overlay that will use a weather map as a bitmap
+      var overlay = new H.map.Overlay(
+            new H.geo.Rect(
+            8.097482029415563, -82.59019660585712,
+            -1.8136980652597394, -72.67901651118181
+            ),
+            overlayImage,
+            {
+              volatility: true,
+              opacity: 0.6
+            }
+      );
+
+      // add overlay to the map
+      map.addObject(overlay);
+}
 

@@ -10,7 +10,7 @@
     padding: 2px;
     background-color: aliceblue;
     border: solid black 1px;
-    width: 45%
+    width: 50.5%
 }
 
 .map{
@@ -39,7 +39,7 @@
     flex-direction: column;
     margin-left: 4%;
     background-color: aliceblue;
-    width: 44.6%;
+    width: 50%;
     border: solid black 1px;
     padding: 5px;
 }

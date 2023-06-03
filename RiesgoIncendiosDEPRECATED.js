@@ -42,7 +42,7 @@ function draw_exclusion_wildfires(color){
 function addOverlayToMapWildfires(map) {
       
       let overlayImage = new Image();
-      let url = 'incendios.png';
+      let url = 'http://srvags.sgc.gov.co/arcgis/rest/directories/arcgisoutput/Amenaza_Volcanica/Amenaza_Volcanica_MapServer/_ags_map75bcc22e53454ca489610b6d5eac1736.png';
       overlayImage.src = url;
       overlayImage.crossOrigin = 'Anonymous';
 
