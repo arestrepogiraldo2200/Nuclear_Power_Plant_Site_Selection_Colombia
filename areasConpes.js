@@ -124835,8 +124835,7 @@ let AreasConpes = [
 
 // Obtains the checkbox object related to the CONPES exclusion zones
 let conpes = document.getElementById('conpes');
-population
-population
+
 // If the box is checked at the program start, then draw
 if (!conpes.checked){
       draw_exclusion_conpes('rgba(0, 224, 142, 0.3)');
