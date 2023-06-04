@@ -1,4 +1,6 @@
 
+// Data for each sismisity level
+
 let Baja = [
       6.942221999773301,
       -70.091667,
@@ -20761,7 +20763,7 @@ let Alta = [
 // THIS BLOCK SHOULD APPEAR ON EACH EXCLUSION ZONE CALCULATION .js
 //--------------------------------------------------------------------------------------
 
-// Obtains the checkbox object related to the population exclusion
+// Obtains the checkbox object related to the sismic activity
 let high_sismicity = document.getElementById('high_sismicity');
 let medium_sismicity = document.getElementById('medium_sismicity');
 let low_sismicity = document.getElementById('low_sismicity');
@@ -20781,7 +20783,7 @@ if (!low_sismicity.checked){
       draw_exclusion_sismicity('rgba(0, 255, 0, 0.15)', Baja2);
 }
 
-// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
+// Detects changes in the checkbox related to the sismic activity and "erase" by reloading or draws it
 high_sismicity.addEventListener('change', (event) => {
 
   if (high_sismicity.checked){
@@ -20791,7 +20793,7 @@ high_sismicity.addEventListener('change', (event) => {
   }
 })
 
-// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
+// Detects changes in the checkbox related to the sismic activity and "erase" by reloading or draws it
 medium_sismicity.addEventListener('change', (event) => {
 
       if (medium_sismicity.checked){
@@ -20803,7 +20805,7 @@ medium_sismicity.addEventListener('change', (event) => {
       }
 })
 
-// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
+// Detects changes in the checkbox related to the sismic activity and "erase" by reloading or draws it
 low_sismicity.addEventListener('change', (event) => {
 
       if (low_sismicity.checked){
@@ -20816,6 +20818,7 @@ low_sismicity.addEventListener('change', (event) => {
 
 //--------------------------------------------------------------------------------------
 
+// Function to draw sismic activity zones
 function draw_exclusion_sismicity(colors, coords){
 
       addPolygonToMapSism(map, coords, colors);   

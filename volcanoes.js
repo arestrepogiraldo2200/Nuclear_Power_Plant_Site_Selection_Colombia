@@ -309,7 +309,7 @@ let volcanoes = [
 // THIS BLOCK SHOULD APPEAR ON EACH EXCLUSION ZONE CALCULATION .js
 //--------------------------------------------------------------------------------------
 
-// Obtains the checkbox object related to the population exclusion
+// Obtains the checkbox object related to the volcanoes danger zones
 let volcanoe_exclusion = document.getElementById('volcanoe_exclusion');
 
 // If the box is checked at the program start, then draw
@@ -317,7 +317,7 @@ if (!volcanoe_exclusion.checked){
       draw_exclusion_volcanoes('rgba(0, 0, 128, 0.7)');
 }
 
-// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
+// Detects changes in the checkbox related to the volcanoes danger zones and "erase" by reloading or draws it
 volcanoe_exclusion.addEventListener('change', (event) => {
 
   if (volcanoe_exclusion.checked){
@@ -342,12 +342,13 @@ all_same_color.addEventListener('change', (event) => {
 function draw_exclusion_volcanoes(colors){
 
     for (let i = 0; i < volcanoes.length; i++){
-        addPolygonToMap(map, parseFloat(volcanoes[i].lat), parseFloat(volcanoes[i].lng), colors);
+        addPolygonToMapVolcanoes(map, parseFloat(volcanoes[i].lat), parseFloat(volcanoes[i].lng), colors);
     }
     addOverlayToMapVolcanoes(map)
 }
+
 // Function to draw volcano triangles
-function addPolygonToMap(map, lat, lng, colors) {
+function addPolygonToMapVolcanoes(map, lat, lng, colors) {
 
     var lineString = new H.geo.LineString(
     [
@@ -369,7 +370,7 @@ function addPolygonToMap(map, lat, lng, colors) {
     );
 }
 
-
+// Function to draw images over map
 function addOverlayToMapVolcanoes(map) {
       
       let overlayImage = new Image();
@@ -378,7 +379,7 @@ function addOverlayToMapVolcanoes(map) {
       overlayImage.crossOrigin = 'Anonymous';
       
       
-      // create an overlay that will use a weather map as a bitmap
+      // Create an overlay
       var overlay = new H.map.Overlay(
             new H.geo.Rect(
             8.097482029415563, -82.59019660585712,
@@ -391,7 +392,7 @@ function addOverlayToMapVolcanoes(map) {
             }
       );
 
-      // add overlay to the map
+      // Add overlay to the map
       map.addObject(overlay);
 }
 

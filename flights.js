@@ -5651,7 +5651,7 @@ let airports_coords = [
 // THIS BLOCK SHOULD APPEAR ON EACH EXCLUSION ZONE CALCULATION .js
 //--------------------------------------------------------------------------------------
 
-// Obtains the checkbox object related to the population exclusion
+// Obtains the checkbox object related to the flights and airports
 let flights_exclusion = document.getElementById('flights_exclusion');
 
 // If the box is checked at the program start, then draw
@@ -5659,7 +5659,7 @@ if (!flights_exclusion.checked){
       draw_exclusion_flights('rgba(128, 0, 0, 0.1)', 'rgba(128, 0, 0, 0.2)');
 }
 
-// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
+// Detects changes in the checkbox related to the flights and airports and "erase" by reloading or draws it
 flights_exclusion.addEventListener('change', (event) => {
 
   if (flights_exclusion.checked){
@@ -5669,23 +5669,13 @@ flights_exclusion.addEventListener('change', (event) => {
   }
 })
 
-// // If the box is checked draw all exclusions by the same color
-// all_same_color.addEventListener('change', (event) => {
-
-//       if (all_same_color.checked){
-//          draw_exclusion_flights('rgba(255, 0, 0, 0.3)', 'rgba(255, 0, 0, 0.8)');
-//       } else {
-//         window.location.reload();
-//       }
-// })
-
 //--------------------------------------------------------------------------------------
 
 // Takes the data above and draws the exclusion circle zones and aerial routes
 function draw_exclusion_flights(colors1, colors2){
 
       for (let i = 0; i < flights_coords.length; i++){
-            addPolylineToMap(map, flights_coords[i].lati, flights_coords[i].lngi, flights_coords[i].latf, flights_coords[i].lngf, colors1);
+            addPolylineToMapFlights(map, flights_coords[i].lati, flights_coords[i].lngi, flights_coords[i].latf, flights_coords[i].lngf, colors1);
       }
 
 
@@ -5714,7 +5704,7 @@ function draw_exclusion_flights(colors1, colors2){
 }
 
 // Function to draw routes
-function addPolylineToMap(map, lati, lngi, latf, lngf, colors1) {
+function addPolylineToMapFlights(map, lati, lngi, latf, lngf, colors1) {
       
       var lineString = new H.geo.LineString();
       

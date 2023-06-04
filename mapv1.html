@@ -107,20 +107,18 @@
         restrictMap(map);
 
       </script>
-      
-
     </div>
   </div>
 
-
+  <!-- Coordinates of last click output -->
   <div class = "coords" style="font-family: 'Space Mono'; padding-bottom: 10px;">
     <p id = "coords">Coordenadas del último click: </p>
   </div>
 
+  <!-- Inputs and spans to account for the user requested exclusion zones. Uses sessionStorage object to save the state of each checkbox -->
   <div class = "exclusion" style="font-family: 'Space Mono'; padding-bottom: 10px;">
     <div class = "excl_container"><p id = "excl" style = "font-weight: 400;">Criterios de exclusión (click para graficar o borrar del mapa): </p></div>
     
-    <!-- Inputs and spans to account for the user requested exclusion zones. Uses sessionStorage object to save the state of each checkbox -->
     <div class = "excl_container">
       <input type="checkbox" id = "population_exclusion" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
       <span class="checkmark" id="checkmark_population_exclusion"></span>
@@ -148,19 +146,19 @@
     <div class = "excl_container">
       <input type="checkbox" id = "high_sismicity" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
       <span class="checkmark" id="checkmark_high_sismicity"></span>
-      <p id = "excl">Alta sismicidad</p>
+      <p id = "excl">Sismicidad alta</p>
     </div>
 
     <div class = "excl_container">
       <input type="checkbox" id = "medium_sismicity" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
       <span class="checkmark" id="checkmark_medium_sismicity"></span>
-      <p id = "excl">Media sismicidad</p>
+      <p id = "excl">Sismicidad media</p>
     </div>
 
     <div class = "excl_container">
       <input type="checkbox" id = "low_sismicity" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
       <span class="checkmark" id="checkmark_low_sismicity"></span>
-      <p id = "excl">Baja sismicidad</p>
+      <p id = "excl">Sismicidad baja</p>
     </div>
 
     <div class = "excl_container">
@@ -196,7 +194,7 @@
     <div class = "excl_container">
       <input type="checkbox" id = "wildfires" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
       <span class="checkmark" id="checkmark_wildfires"></span>
-      <p id = "excl">Riesgo por incendios forestales</p>
+      <p id = "excl">Focos de incendios forestales</p>
     </div>
 
     <div class = "excl_container">
@@ -208,7 +206,7 @@
     <div class = "excl_container">
       <input type="checkbox" id = "tsunamis" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
       <span class="checkmark" id="checkmark_tsunamis"></span>
-      <p id = "excl">Riesgo por Tsunamis</p>
+      <p id = "excl">Riesgo por tsunamis</p>
     </div>
 
     <div class = "excl_container">
@@ -240,7 +238,7 @@
   <script type="text/javascript">
     
     // This script sets the vaules of each checkbox as saved in Session
-    //console.log(sessionStorage);}
+    //console.log(sessionStorage);
 
     for (var i=0; i<sessionStorage.length; i++){
         var key = sessionStorage.key(i);
@@ -248,12 +246,14 @@
     }
   </script>
 
+  <!-- Authors and information -->
   <div class = "info" style="font-family: 'Space Mono'; padding-bottom: 10px;">
     <p id = "inf">Alejandro Restrepo Giraldo, Nataly Gómez Garzón. 2023</p>
     <p id = "inf">Artículo ------ poner href cuando exista </p>
     <p id = "inf">Versión 1.0</p>
   </div>
-
+  
+  <!-- Scripts of exclusion zones -->
   <script src="amenazaSismica.js"></script>
   <script src="pupulation.js"></script>
   <script src="flights.js"></script>

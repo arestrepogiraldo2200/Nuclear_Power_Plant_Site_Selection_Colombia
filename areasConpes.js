@@ -124833,15 +124833,16 @@ let AreasConpes = [
 // THIS BLOCK SHOULD APPEAR ON EACH EXCLUSION ZONE CALCULATION .js
 //--------------------------------------------------------------------------------------
 
-// Obtains the checkbox object related to the population exclusion
+// Obtains the checkbox object related to the CONPES exclusion zones
 let conpes = document.getElementById('conpes');
-
+population
+population
 // If the box is checked at the program start, then draw
 if (!conpes.checked){
       draw_exclusion_conpes('rgba(0, 224, 142, 0.3)');
 }
 
-// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
+// Detects changes in the checkbox related to the CONPES exclusion zones and "erase" by reloading or draws it
 conpes.addEventListener('change', (event) => {
 
   if (conpes.checked){

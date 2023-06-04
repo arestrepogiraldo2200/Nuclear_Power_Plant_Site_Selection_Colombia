@@ -67354,7 +67354,7 @@ let Tsunami = [
 // THIS BLOCK SHOULD APPEAR ON EACH EXCLUSION ZONE CALCULATION .js
 //--------------------------------------------------------------------------------------
 
-// Obtains the checkbox object related to the population exclusion
+// Obtains the checkbox object related to the tsunami threat zones
 let tsunamis = document.getElementById('tsunamis');
 
 // If the box is checked at the program start, then draw
@@ -67362,7 +67362,7 @@ if (!tsunamis.checked){
       draw_exclusion_tsunamis('rgba(20, 52, 255, 0.4)');
 }
 
-// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
+// Detects changes in the checkbox related to the tsunami threat zones and "erase" by reloading or draws it
 tsunamis.addEventListener('change', (event) => {
 
   if (tsunamis.checked){

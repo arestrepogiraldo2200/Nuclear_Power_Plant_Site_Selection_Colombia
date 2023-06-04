@@ -121496,7 +121496,7 @@ let RiesgoInundacion = [
 // THIS BLOCK SHOULD APPEAR ON EACH EXCLUSION ZONE CALCULATION .js
 //--------------------------------------------------------------------------------------
 
-// Obtains the checkbox object related to the population exclusion
+// Obtains the checkbox object related to the flood danger zones
 let flooding = document.getElementById('flooding');
 
 // If the box is checked at the program start, then draw
@@ -121504,7 +121504,7 @@ if (!flooding.checked){
       draw_exclusion_flooding('rgba(0, 67, 112, 0.15)');
 }
 
-// Detects changes in the checkbox related to the population exclusion and "erase" by reloading or draws it
+// Detects changes in the checkbox related to the flood danger zones and "erase" by reloading or draws it
 flooding.addEventListener('change', (event) => {
 
   if (flooding.checked){
