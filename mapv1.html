@@ -224,10 +224,17 @@
     </div>
 
     <div class = "excl_container">
+      <input type="checkbox" id = "conpes" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_conpes"></span>
+      <p id = "excl">Prioridades de conservación nacional CONPES 3680</p>
+    </div>
+
+    <div class = "excl_container">
       <input type="checkbox" id = "all_same_color">
       <span class="checkmark" id="checkmark_all_same_color"></span>
       <p id = "excl">Trazar zonas de exclusión del mismo color</p>
     </div>
+    
   </div>
 
   <script type="text/javascript">
@@ -261,6 +268,7 @@
   <script src="RiesgoTsunamis.js"></script>
   <script src="ConservacionAves.js"></script>
   <script src="Paramos.js"></script>
+  <script src="areasConpes.js"></script>
 
 </body>
 <footer>
