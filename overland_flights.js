@@ -11693,15 +11693,15 @@ overland_flights_exclusion.addEventListener('change', (event) => {
   }
 })
 
-// If the box is checked draw all exclusions by the same color
-all_same_color.addEventListener('change', (event) => {
+// // If the box is checked draw all exclusions by the same color
+// all_same_color.addEventListener('change', (event) => {
 
-      if (all_same_color.checked){
-         draw_exclusion_overland_flights('rgba(255, 0, 0, 0.3)');
-      } else {
-        window.location.reload();
-      }
-})
+//       if (all_same_color.checked){
+//          draw_exclusion_overland_flights('rgba(255, 0, 0, 0.3)');
+//       } else {
+//         window.location.reload();
+//       }
+// })
 
 //--------------------------------------------------------------------------------------
 
