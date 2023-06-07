@@ -228,6 +228,12 @@
     </div>
 
     <div class = "excl_container">
+      <input type="checkbox" id = "army" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_army"></span>
+      <p id = "excl">Zonas y distritos militares</p>
+    </div>
+
+    <div class = "excl_container">
       <input type="checkbox" id = "all_same_color">
       <span class="checkmark" id="checkmark_all_same_color"></span>
       <p id = "excl">Trazar zonas de exclusión del mismo color</p>
@@ -269,6 +275,7 @@
   <script src="ConservacionAves.js"></script>
   <script src="Paramos.js"></script>
   <script src="areasConpes.js"></script>
+  <script src="zonasMilitares.js"></script>
 
 </body>
 <footer>

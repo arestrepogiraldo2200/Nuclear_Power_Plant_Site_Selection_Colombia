@@ -171,6 +171,11 @@
     border: black 1px solid;
 }
 
+#checkmark_army{
+    background-color: rgb(0, 41, 16);
+    border: black 1px solid;
+}
+
 /* ----------------------------------------------------------------- */
 
 
@@ -186,7 +191,7 @@
 #geological_failure:checked ~ .checkmark, #indigenous_zones:checked ~ .checkmark, #natural_reserve:checked ~ .checkmark,
 #humanity_world_heritage:checked ~ .checkmark, #electrical_transmission:checked ~ .checkmark, #wildfires:checked ~ .checkmark,
 #flooding:checked ~ .checkmark, #tsunamis:checked ~ .checkmark, #aves:checked ~ .checkmark,  #paramos:checked ~ .checkmark,
-#conpes:checked ~ .checkmark{
+#conpes:checked ~ .checkmark, #army:checked ~ .checkmark{
 
     background-color:white;
     border: black 1px solid;
