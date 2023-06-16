@@ -59,24 +59,24 @@
         // Objects for user interphase controllers
         var ui = H.ui.UI.createDefault(map, maptypes);
 
-        // Controls
-        ui.removeControl("mapsettings");
-        var zoom = ui.getControl('zoom');
-        var scalebar = ui.getControl('scalebar');
-
         // Function to display coordinates by mouse click
         function setUpClickListener(map) {
 
-          map.addEventListener('tap', function (evt) {
+        map.addEventListener('tap', function (evt) {
 
-            var coord = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
-            var output = document.getElementById('coords');
-            coords.innerHTML = 'Coordenadas del último click: lat: ' + coord.lat.toFixed(6)  + ',  lng: ' + coord.lng.toFixed(6);
+          var coord = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
+          var output = document.getElementById('coords');
+          coords.innerHTML = 'Coordenadas del último click: lat: ' + coord.lat.toFixed(6)  + ',  lng: ' + coord.lng.toFixed(6);
 
           });
         }
 
         setUpClickListener(map);
+
+        // Controls
+        ui.removeControl("mapsettings");
+        var zoom = ui.getControl('zoom');
+        var scalebar = ui.getControl('scalebar');
 
         // Function to restrict map view
         function restrictMap(map){
@@ -231,6 +231,18 @@
       <input type="checkbox" id = "army" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
       <span class="checkmark" id="checkmark_army"></span>
       <p id = "excl">Zonas y distritos militares</p>
+    </div>
+
+    <div class = "excl_container">
+      <input type="checkbox" id = "mass_remotion" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_mass_remotion"></span>
+      <p id = "excl">Riesgo por remoción de masa</p>
+    </div>
+
+    <div class = "excl_container">
+      <input type="checkbox" id = "archaeologic" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_archaeologic"></span>
+      <p id = "excl">Zonas de interés arqueológico</p>
     </div>
 
     <div class = "excl_container">
