@@ -59,20 +59,6 @@
         // Objects for user interphase controllers
         var ui = H.ui.UI.createDefault(map, maptypes);
 
-        // Function to display coordinates by mouse click
-        function setUpClickListener(map) {
-
-        map.addEventListener('tap', function (evt) {
-
-          var coord = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
-          var output = document.getElementById('coords');
-          coords.innerHTML = 'Coordenadas del último click: lat: ' + coord.lat.toFixed(6)  + ',  lng: ' + coord.lng.toFixed(6);
-
-          });
-        }
-
-        setUpClickListener(map);
-
         // Controls
         ui.removeControl("mapsettings");
         var zoom = ui.getControl('zoom');
@@ -114,6 +100,26 @@
   <div class = "coords" style="font-family: 'Space Mono'; padding-bottom: 10px;">
     <p id = "coords">Coordenadas del último click: </p>
   </div>
+
+  <script type="text/javascript" charset="utf-8">
+
+    // Function to display coordinates by mouse click
+    function setUpClickListener(map) {
+
+      map.addEventListener('tap', function (evt) {
+
+      var coord = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
+      var output = document.getElementById('coords');
+      output.innerHTML = 'Coordenadas del último click: lat: ' + coord.lat.toFixed(6)  + ',  lng: ' + coord.lng.toFixed(6);
+      console.log('Coordenadas del último click: lat: ' + coord.lat.toFixed(6)  + ',  lng: ' + coord.lng.toFixed(6));
+
+      });
+
+    }
+    
+    setUpClickListener(map);
+
+  </script>
 
   <!-- Inputs and spans to account for the user requested exclusion zones. Uses sessionStorage object to save the state of each checkbox -->
   <div class = "exclusion" style="font-family: 'Space Mono'; padding-bottom: 10px;">
