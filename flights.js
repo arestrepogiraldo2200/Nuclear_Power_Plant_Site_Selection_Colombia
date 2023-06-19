@@ -5669,6 +5669,19 @@ flights_exclusion.addEventListener('change', (event) => {
   }
 })
 
+// Draw all exclusion zones by the same color
+let all_same_color = document.getElementById('all_same_color');
+
+// If the box is checked draw all exclusions by the same color
+all_same_color.addEventListener('change', (event) => {
+
+  if (all_same_color.checked){
+      draw_exclusion_flights('rgba(128, 0, 0, 0.1)', 'rgba(255, 0, 0, 0.8)');
+  } else {
+    window.location.reload();
+  }
+})
+
 //--------------------------------------------------------------------------------------
 
 // Takes the data above and draws the exclusion circle zones and aerial routes
