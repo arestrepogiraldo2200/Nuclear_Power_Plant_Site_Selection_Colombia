@@ -5669,9 +5669,6 @@ flights_exclusion.addEventListener('change', (event) => {
   }
 })
 
-// Draw all exclusion zones by the same color
-let all_same_color = document.getElementById('all_same_color');
-
 // If the box is checked draw all exclusions by the same color
 all_same_color.addEventListener('change', (event) => {
 
