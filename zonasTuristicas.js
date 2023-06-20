@@ -17,7 +17,17 @@ humanity_world_heritage.addEventListener('change', (event) => {
   if (humanity_world_heritage.checked){
     window.location.reload();
   } else {
-      draw_exclusion_humanity_world_heritage('rgba(128, 0, 0, 0.1)');
+      draw_exclusion_humanity_world_heritage('rgba(128, 0, 0, 0.8)');
+  }
+})
+
+// If the box is checked draw all exclusions by the same color
+all_same_color.addEventListener('change', (event) => {
+
+  if (all_same_color.checked){
+    draw_exclusion_humanity_world_heritage('rgba(255, 0, 0, 0.8)');
+  } else {
+    window.location.reload();
   }
 })
 
