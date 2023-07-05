@@ -240,15 +240,15 @@
     </div>
 
     <div class = "excl_container">
-      <input onclick="window.location.href='https://simma.sgc.gov.co/#/public/basic/';" type="checkbox" id = "mass_remotion" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
-      <span class="checkmark" id="checkmark_mass_remotion" ></span>
-      <p id = "excl">Riesgo por remoción de masa</p>
+      <input type="checkbox" id = "archaeologic" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_archaeologic"></span>
+      <p id = "excl">Zonas de interés arqueológico</p>
     </div>
 
     <div class = "excl_container">
-      <input onclick="window.location.href='https://www.colombiaenmapas.gov.co/?e=-84.5417296191407,-3.0250698714697393,-59.91038196289724,11.485659832247991,4686&b=igac&l=1467&u=0&t=5&servicio=1467';" type="checkbox" id = "archaeologic" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
-      <span class="checkmark" id="checkmark_archaeologic"></span>
-      <p id = "excl">Zonas de interés arqueológico</p>
+      <input onclick="window.location.href='https://simma.sgc.gov.co/#/public/basic/';" type="checkbox" id = "mass_remotion" onclick="if(this.checked)sessionStorage.setItem(this.id,this.value);else sessionStorage.removeItem(this.id);">
+      <span class="checkmark" id="checkmark_mass_remotion" ></span>
+      <p id = "excl">Riesgo por remoción de masa</p>
     </div>
 
     <div class = "excl_container">
@@ -295,6 +295,7 @@
   <script src="areasConpes.js"></script>
   <script src="zonasMilitares.js"></script>
   <script src="zonasTuristicas.js"></script>
+  <script src="ZonasArqueologicas.js"></script>
 
 </body>
 <footer>
