@@ -11,4 +11,5 @@ Based on the documentation
 
 Project deployed at [nuclear power plant Colombia](https://planta-nuclear-colombia.onrender.com/).
 
-![image](https://github.com/arestrepogiraldo2200/Nuclear_Power_Plant_Site_Selection_Colombia/assets/41751049/868a48ef-77a6-44c1-8d39-a36e408122c1)
+
+<img src="https://github.com/arestrepogiraldo2200/Nuclear_Power_Plant_Site_Selection_Colombia/assets/41751049/868a48ef-77a6-44c1-8d39-a36e408122c1" width="500" height="500">
