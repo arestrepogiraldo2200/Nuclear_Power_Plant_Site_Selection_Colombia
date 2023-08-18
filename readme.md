@@ -1,6 +1,6 @@
 # Considerations for the Location of a Nuclear Power Plant in Colombia
 
-Based on documentation
+Based on the documentation
 
 <ol>
   <li>(IAEA) Site Evaluation for Nuclear Installations</li>
